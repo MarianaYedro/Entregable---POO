@@ -6,29 +6,41 @@
 class Alumno
 {
   //2. Implementar la clase creando los atributos necesarios
-  private $nombre;
-  private $apellido;
-  private $codigo;
+  private $nombreAlumno;
+  private $apellidoAlumno;
+  private $codigoAlumno;
 
 //3. Crear un cosntructor para el alumno que tome por parámetro un nombre, un apellido y un código de alumno.
-  public function __construct($elNombre, $elApellido, $elCodigo)
+  public function __construct(string $unNombre, string $unApellido, integer $unCodigo)
   {
-    $this->nombre = $elNombre;
-    $this->apellido = $elApellido;
-    $this->codigo = $elCodigo;
+    $this->nombreAlumno = $unNombre;
+    $this->apellidoAlumno = $unApellido;
+    $this->codigoAlumno = $unCodigo;
   }
 
-//4. Crear los getters y setters necesarios
+//4. Crear los getters y setters necesarios.
   public function getNombre() {
-    return $this->nombre;
+    return $this->nombreAlumno;
   }
 
   public function getApellido() {
-    return $this->apellido;
+    return $this->apellidoAlumno;
   }
 
   public function getCodigo() {
-    return $this->codigo;
+    return $this->codigoAlumno;
+  }
+
+  public function setNombre($unNombre){
+    $this->nombreAlumno = $unNombre;
+  }
+
+  public function setApellido($unApellido){
+    $this->apellidoAlumno = $unApellido;
+  }
+
+  public function setCodigo($unCodigo){
+    $this->codigoAlumno = $unCodigo;
   }
 }
 

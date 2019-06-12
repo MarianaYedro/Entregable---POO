@@ -6,16 +6,33 @@
 class Curso
 {
   //2. Implementar la clase creando los atributos necesarios
-  private $nombre;
-  private $codigo;
+  private $nombreCurso;
+  private $codigoCurso;
+  private $cupo;
+
+  public function __construct(string $unNombre, integer $unCodigo, integer $unCupo)
+  {
+    $this->nombreCurso = $unNombre;
+    $this->codigoCurso = $unCodigo;
+    $this->cupo = $unCupo;
+
+  }
 
 //3. Crear los getters y setters necesarios
   public function getNombre() {
-    return $this->nombre;
+    return $this->nombreCurso;
   }
 
   public function getCodigo() {
-    return $this->codigo;
+    return $this->codigoCurso;
+  }
+
+  public function setNombre($unNombre){
+    $this->nombreCurso = $unNombre;
+  }
+
+  public function setCodigo($unCurso){
+    $this->codigoCurso = $unCurso;
   }
 
 }
