@@ -6,7 +6,7 @@
 
   function __construct(string $unaEspecialidad)
   {
-    $this->especialidad = $unaEspecialidad
+    $this->especialidad = $unaEspecialidad;
   }
 
   public function getEspecialidad() {

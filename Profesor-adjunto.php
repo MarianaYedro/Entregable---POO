@@ -6,11 +6,11 @@
 
   function __construct(string $horas)
   {
-    $this->horasConsulta = $horas
+    $this->horasConsulta = $horas;
   }
 
   public function getHorasConsulta() {
-    return $this->horasConsulta
+    return $this->horasConsulta;
   }
 
   public function setHorasConsulta() {

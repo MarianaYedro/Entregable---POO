@@ -9,13 +9,15 @@ class Curso
   private $nombreCurso;
   private $codigoCurso;
   private $cupo;
+  private $nprofesorTitular;
+  private $profesorAdjunto;
+  private $listaAlumnos = [];
 
   public function __construct(string $unNombre, integer $unCodigo, integer $unCupo)
   {
     $this->nombreCurso = $unNombre;
     $this->codigoCurso = $unCodigo;
     $this->cupo = $unCupo;
-
   }
 
 //3. Crear los getters y setters necesarios
@@ -33,6 +35,10 @@ class Curso
 
   public function setCodigo($unCurso){
     $this->codigoCurso = $unCurso;
+  }
+
+  public function setProfesorAdjunto(ProfesorAdjunto $profesor) {
+    $this->profesorAdjunto = $profesor;
   }
 
 }
