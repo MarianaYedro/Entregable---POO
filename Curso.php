@@ -9,7 +9,7 @@ class Curso
   private $nombreCurso;
   private $codigoCurso;
   private $cupo;
-  private $nprofesorTitular;
+  private $profesorTitular;
   private $profesorAdjunto;
   private $listaAlumnos = [];
 
@@ -37,10 +37,13 @@ class Curso
     $this->codigoCurso = $unCurso;
   }
 
-  public function setProfesorAdjunto(ProfesorAdjunto $profesor) {
+  public function setProfesorAdjunto(profesorAdjunto $profesor) {
     $this->profesorAdjunto = $profesor;
   }
 
+  public function setProfesorTitular(profesorTitular $profesor) {
+    $this->profesorAdjunto = $profesor;
+  }
 }
 
  ?>
