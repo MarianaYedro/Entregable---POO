@@ -6,12 +6,12 @@
 class Alumno
 {
   //2. Implementar la clase creando los atributos necesarios
-  private $nombreAlumno;
-  private $apellidoAlumno;
-  private $codigoAlumno;
+  protected $nombreAlumno;
+  protected $apellidoAlumno;
+  protected $codigoAlumno;
 
 //3. Crear un cosntructor para el alumno que tome por parámetro un nombre, un apellido y un código de alumno.
-  public function __construct(string $unNombre, string $unApellido, integer $unCodigo)
+  public function __construct(string $unNombre, string $unApellido, int $unCodigo)
   {
     $this->nombreAlumno = $unNombre;
     $this->apellidoAlumno = $unApellido;

@@ -1,17 +1,16 @@
 <?php
-
 // Parte C
 
 //1. Reralizar un diagrama de clase que modele a la clase Profesor.
-abstract class Profesor //Parte D: Creo una clase abstracta para que las clases profesores titulares y adjuntos hereden de la misma.
-{
+  abstract class Profesor //Parte D: Creo una clase abstracta para que las clases profesores titulares y adjuntos hereden de la misma.
+  {
   //2. Implementar la clase creando los atributos necesarios
   protected $nombreProfesor;
   protected $apellidoProfesor;
   protected $antiguedadProfesor;
   protected $codigoProfesor;
 
-  public function __construct(string $unNombre, string $unApellido, integer $unaAntiguedad, integer $unCodigo)
+  public function __construct(string $unNombre, string $unApellido, int $unaAntiguedad, int $unCodigo)
   {
     $this->nombreProfesor = $unNombre;
     $this->apellidoProfesor = $unApellido;

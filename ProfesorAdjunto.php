@@ -4,8 +4,10 @@
 {
   private $horasConsulta;
 
-  function __construct(string $horas)
+
+  function __construct(string $unNombre, string $unApellido, int $unaAntiguedad, int $unCodigo , int $horas)
   {
+    parent::__construct ($unNombre, $unApellido, $unaAntiguedad,  $unCodigo);
     $this->horasConsulta = $horas;
   }
 

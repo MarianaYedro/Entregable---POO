@@ -6,14 +6,14 @@
 class Curso
 {
   // 2. Implementar la clase creando los atributos necesarios
-  private $nombreCurso;
-  private $codigoCurso;
-  private $cupo; // E - Agrego cupo de alumnos
-  private $profesorTitular;
-  private $profesorAdjunto;
-  private $listaAlumnos = [];
+  protected $nombreCurso;
+  protected $codigoCurso;
+  protected $cupo; // E - Agrego cupo de alumnos
+  protected $profesorTitular;
+  protected $profesorAdjunto;
+  protected $listaAlumnos = [];
 
-  public function __construct(string $unNombre, integer $unCodigo, integer $unCupo)
+  public function __construct(string $unNombre, int $unCodigo, int $unCupo)
   {
     $this->nombreCurso = $unNombre;
     $this->codigoCurso = $unCodigo;
@@ -37,29 +37,40 @@ class Curso
     $this->codigoCurso = $unCurso;
   }
 
-// Crear un método que permita obtener a los profesores
-  public function setProfesorAdjunto(profesorAdjunto $profesor) {
+  public function setProfesorAdjunto(ProfesorAdjunto $profesor) {
     $this->profesorAdjunto = $profesor;
   }
 
-  public function setProfesorTitular(profesorTitular $profesor) {
-    $this->profesorAdjunto = $profesor;
+  public function setProfesorTitular(ProfesorTitular $profesor) {
+    $this->profesorTitular = $profesor;
   }
 
-// Crear un método que permita listar alumnos
-  public function setListaAlumnos(listaAlumnos $listaAlumnos) {
-    $this->listaAlumnos = $listaAlumnos;
+  public function getProfesorAdjunto(){
+    return $this->profesorAdjunto;
   }
 
-// Parte G - Crear un método en la clase Curso que permita agregar un alumno a la lista. El método devolverá true si el alumno puede agregarse o false en caso de que no haya cupo disponible.
+  public function getProfesorTitular(){
+    return $this->profesorTitular;
+  }
 
-  public function agregarUnAlumno(Alumno $unAlumno){
-    if ($cupo) {
-      return true;
-    } else {
-      return false;
+ // Agrego un alumno a la ultima posicion de la lista
+  public function setListaAlumnos(Alumno $nuevoAlumno) {
+    $this->listaAlumnos[] = $nuevoAlumno;
+  }
+
+  public function getListaAlumnos(){
+    return $this->listaAlumnos;
+  }
+
+ // Punto E - Listar alumnos
+  public function listarAlumnos(){
+    foreach ($this->listaAlumnos as $alumno) {
+      echo $alumno->getNombre() . "<br>";
     }
   }
-}
+
+  // Parte G
+
+  }
 
  ?>
