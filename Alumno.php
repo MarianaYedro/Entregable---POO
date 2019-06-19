@@ -23,22 +23,22 @@ class Alumno
     return $this->nombreAlumno;
   }
 
-  public function getApellido() {
-    return $this->apellidoAlumno;
-  }
-
-  public function getCodigo() {
-    return $this->codigoAlumno;
-  }
-
   public function setNombre($unNombre){
     $this->nombreAlumno = $unNombre;
+  }
+
+  public function getApellido() {
+    return $this->apellidoAlumno;
   }
 
   public function setApellido($unApellido){
     $this->apellidoAlumno = $unApellido;
   }
 
+  public function getCodigo() {
+    return $this->codigoAlumno;
+  }
+  
   public function setCodigo($unCodigo){
     $this->codigoAlumno = $unCodigo;
   }

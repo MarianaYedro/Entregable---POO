@@ -25,35 +25,44 @@ class Curso
     return $this->nombreCurso;
   }
 
-  public function getCodigo() {
-    return $this->codigoCurso;
-  }
-
   public function setNombre($unNombre){
     $this->nombreCurso = $unNombre;
+  }
+
+  public function getCodigo() {
+    return $this->codigoCurso;
   }
 
   public function setCodigo($unCurso){
     $this->codigoCurso = $unCurso;
   }
 
+// Setters y getters para profesores
   public function setProfesorAdjunto(ProfesorAdjunto $profesor) {
     $this->profesorAdjunto = $profesor;
-  }
-
-  public function setProfesorTitular(ProfesorTitular $profesor) {
-    $this->profesorTitular = $profesor;
   }
 
   public function getProfesorAdjunto(){
     return $this->profesorAdjunto;
   }
 
+  public function setProfesorTitular(ProfesorTitular $profesor) {
+    $this->profesorTitular = $profesor;
+  }
+
   public function getProfesorTitular(){
     return $this->profesorTitular;
   }
 
- // Agrego un alumno a la ultima posicion de la lista
+  public function setCupo($unCupo) {
+    $this->cupo = $unCupo;
+  }
+
+  public function getCupo(){
+    return $this->cupo;
+  }
+
+// Punto E - Listar Alumnos
   public function setListaAlumnos(Alumno $nuevoAlumno) {
     $this->listaAlumnos[] = $nuevoAlumno;
   }
@@ -62,15 +71,15 @@ class Curso
     return $this->listaAlumnos;
   }
 
- // Punto E - Listar alumnos
-  public function listarAlumnos(){
-    foreach ($this->listaAlumnos as $alumno) {
-      echo $alumno->getNombre() . "<br>";
+// Parte G - Agregar Alumno
+  public function agregarUnAlumno (Alumno $unAlumno){
+      if (count($this->getListaAlumnos()) < $this->getCupo()) {
+        array_push($this->listaAlumnos, $unAlumno);
+        return true;
+      } else {
+        return false;
+      }
     }
-  }
-
-  // Parte G
-
   }
 
  ?>
